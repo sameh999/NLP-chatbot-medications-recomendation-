@@ -118,12 +118,63 @@ We will use the “Condition/indication” feature for NLP stages and “Medicin
 
 Accuracy of the system is **66.5%**
 ## Error Analysis
+- The clustering model is improved due to the transactions dataset, so having a real dataset will give us the privilege to recommend not only drugs but also other products that have the highest probability to be purchased with the output of the classification models that give the buyer the most suitable drug.
 
-- 	Remove the very beginning and the very last paragraphs of each book
+- In the figure below you may notice that the data is unbalanced so we take the most therapeutic areas or disease category that have the highest number or varieties of  products or drugs which enhance the models performance Figure One.
 
-- 	Remove the most frequent and the least weighted words from TF-IDF Transformation
+- The 1st column of the drug data is related to human or veterinary so after trying the binary classification we found that the accuracy is low as the veterinary drugs have extremely lower # of drugs compared to the human’s one so we chose to classify over the Therapeutic Area or the product category if we need to generalize our work to sell anything not only medicines or drugs.
 
-- 	Try different collections of books
+- Regarding the Clustering we found that the K-Means is the most suitable model for our data type but if we need to generalize our work we may use at least 3 models to find the most accurate one and using for example ensemble methods. 
+
+- In figure two we experienced NGROK using COLAB and we recommend anyone to do that due to the sustainability and easier for integration.  
+
 ![](https://i.ibb.co/MNC91rL/14.png)
 ![](https://i.ibb.co/WvZVcnG/15.png)
+## Deployment and Dialogflow: 
+## How to test our E-Commerce Intelligent Chatbot (Steps):
+1.	Open NGROK for starting a tunnel:
+ ![](https://i.ibb.co/thtZvGY/1.jpg)
+
+2.	Open (ChatBot_Backend_API_Flask_ngrok) notebook.
+
+3.	Upload the PICKLED Model and the (drug_data) File:
+  ![](https://i.ibb.co/dfx86gG/1.png)
+4.	Copy the (Running on http NGROK link:
+  ![](https://i.ibb.co/LCT2JS0/2.jpg)
+
+
+
+5.	Paste the link into the FULFILLMENT tap into DIALOGFLOW:
+    ![](https://i.ibb.co/BcbVBRW/4.jpg)
+6.	Go to (GeTheProduct) Intent:
+  ![](https://i.ibb.co/7Q9Yzs1/3.jpg)
+https://i.ibb.co/Zh4GQRY/5.jpg
+7.	Try the dialog flow simulator for example ‘’ I need a drug as I think nowadays I deal with people in very strange way like anyone have schizophrenia’’ OR ‘’I need drugs or medicine for Diabetes’’ OR anything else. 
+  ![](https://i.ibb.co/6yLPMTq/6.jpg)
+  ![](https://i.ibb.co/3FfzPw0/7.jpg)
+<img src="https://i.ibb.co/qnpVMzK/8.jpg" alt="8" border="0">
+8.	Now or chatbot will recommend to you the most suitable drug or medicine for your case using the power of customization.
+9.	Check the links related to every medicine or drugs from the DIAGNOSTIC INFO tab.
+10.	Or you can use or Telegram App Chatbot: http://t.me/EPharmasict_Bot
+
+
+
+11.	Regarding the ERROR ANALYSIS for the chatbot: the chatbot don’t understand Arabic language or other than English language. We add more intents and entities to better USER EXPERIENCE so you can follow up with your order and ask for more information about your orders.
+
+  <img src="https://i.ibb.co/QMtLJ94/2.png" alt="2" border="0">
+<img src="https://i.ibb.co/MRDkBYC/1.png" alt="1" border="0">
+
+# Innovativeness:
+•	We made a market research before doing this project to know more about the health care chatbot customer service and we found some insightful information from STATISTA suing the uOttawa library: Imagine that you have a Pharmacist and a Doctor in one BOT.
+•	We found that this market has at least 12% CAGR in the next 5 years
+•	We need this chatbot to be delivered in the market with seamless user experience leveraging the power of NLP Algorithms
+•	The most important point that when we searching for the data the benchmark for us is to generalize our work to be integrated easily we other industries in the e-commerce market
+References
+	https://data.europa.eu/euodp/en/data/dataset/epar-human-medicines/resource/34ccc778-81e3-4ee3-86f4-a59604e116be
+	https://www.cs.cmu.edu/~schneide/tut5/node42.html
+	https://campus.datacamp.com/courses/cluster-analysis-in-r/k-means-clustering?ex=9
+	https://docs.aws.amazon.com/sagemaker/latest/dg/lda.html
+	https://nlp.stanford.edu/IR-book/html/htmledition/hierarchical-agglomerative-clustering-1.html
+
+
 
